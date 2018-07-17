@@ -1,0 +1,32 @@
+doctype html
+html
+	head
+		title = title
+		link(rel='stylesheet', href='/stylesheets/style.css')
+		script
+			-var result = user;
+			-console.log(result);
+	body
+		form(action='/users/updateUserAction',method='POST')
+			div
+				label(for='userID') userID
+				input(name='userID',value='#{user.id}')
+			div
+				label(for='username') username
+				input(name='username',value='#{user.username}')
+			div
+				label(for='password') password
+				input(name='password',value='#{user.password}',type='password')
+			div
+				label(for='qrcode') qrcode
+				input(name='qrcode',value='#{user.qrcode}')
+			div
+				input(type='submit',value='提交') 
+			
+			hr
+			
+			div
+				p #{content}
+				p #{user.username}
+			div
+				p #{title}
